@@ -11,6 +11,7 @@ public class Nollaa extends Komento {
 
     @Override
     public void suorita() {
+        this.arvo = sovellus.tulos();
         sovellus.nollaa();
         syotekentta.setText("");
         tuloskentta.setText("");
@@ -18,7 +19,9 @@ public class Nollaa extends Komento {
 
     @Override
     public void peru() {
-
+        sovellus.setTulos(this.arvo);
+        tuloskentta.setText(String.valueOf(this.arvo));
+        this.arvo = 0;
     }
 
 }

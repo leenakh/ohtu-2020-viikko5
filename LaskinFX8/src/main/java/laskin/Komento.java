@@ -11,6 +11,7 @@ public abstract class Komento {
     public Button nollaa;
     public Button undo;
     public Sovelluslogiikka sovellus;
+    public int arvo;
     
     public Komento(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovellus) {
         this.tuloskentta = tuloskentta;
@@ -18,6 +19,7 @@ public abstract class Komento {
         this.nollaa = nollaa;
         this.undo = undo;
         this.sovellus = sovellus;
+        this.arvo = 0;
     }
     
     public abstract void suorita();

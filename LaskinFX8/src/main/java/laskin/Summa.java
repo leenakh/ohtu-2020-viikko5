@@ -11,14 +11,21 @@ public class Summa extends Komento {
 
     @Override
     public void suorita() {
-        sovellus.plus(Integer.parseInt(syotekentta.getText()));
-        syotekentta.setText("");
-        tuloskentta.setText(String.valueOf(sovellus.tulos()));
+        if (!this.syotekentta.getText().isEmpty()) {
+            this.arvo = sovellus.tulos();
+            sovellus.plus(Integer.parseInt(syotekentta.getText()));
+            syotekentta.setText("");
+            tuloskentta.setText(String.valueOf(sovellus.tulos()));
+        } else {
+            return;
+        }
     }
 
     @Override
     public void peru() {
-
+        sovellus.setTulos(this.arvo);
+        tuloskentta.setText(String.valueOf(sovellus.tulos()));
+        this.arvo = 0;
     }
 
 }
