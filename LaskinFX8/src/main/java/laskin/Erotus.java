@@ -11,13 +11,12 @@ public class Erotus extends Komento {
 
     @Override
     public void suorita() {
-        if (!this.syotekentta.getText().isEmpty()) {
+        try {
             this.arvo = sovellus.tulos();
             sovellus.miinus(Integer.parseInt(syotekentta.getText()));
             syotekentta.setText("");
             tuloskentta.setText(String.valueOf(sovellus.tulos()));
-        } else {
-            return;
+        } catch (Exception e) {
         }
     }
 
