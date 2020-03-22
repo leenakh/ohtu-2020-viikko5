@@ -14,7 +14,8 @@ public class Nollaa extends Komento {
         this.arvo = sovellus.tulos();
         sovellus.nollaa();
         syotekentta.setText("");
-        tuloskentta.setText("");
+        tuloskentta.setText("0");
+        nollaa.disableProperty().set(true);
     }
 
     @Override
@@ -22,6 +23,7 @@ public class Nollaa extends Komento {
         sovellus.setTulos(this.arvo);
         tuloskentta.setText(String.valueOf(this.arvo));
         this.arvo = 0;
+        undo.disableProperty().set(true);
     }
 
 }

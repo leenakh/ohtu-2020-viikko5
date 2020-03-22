@@ -16,6 +16,8 @@ public class Summa extends Komento {
             sovellus.plus(Integer.parseInt(syotekentta.getText()));
             syotekentta.setText("");
             tuloskentta.setText(String.valueOf(sovellus.tulos()));
+            nollaa.disableProperty().set(false);
+            undo.disableProperty().set(false);
         } catch (Exception e) {
         }
     }
@@ -25,6 +27,10 @@ public class Summa extends Komento {
         sovellus.setTulos(this.arvo);
         tuloskentta.setText(String.valueOf(sovellus.tulos()));
         this.arvo = 0;
+        undo.disableProperty().set(true);
+        if (sovellus.tulos() == 0) {
+            nollaa.disableProperty().set(true);
+        }
     }
 
 }
